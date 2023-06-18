@@ -54,7 +54,8 @@ public class Account {
         updateBalance(-quantity);
         receiver.updateBalance(quantity);
 
-        Transaction transaction = new Transaction(this, receiver, quantity);
+        // Transaction transaction = new Transaction(this, receiver, quantity);
+        Transaction transaction = new Transaction(iban, receiver.getIban(), quantity);
         transactions.add(transaction);
 
         return transaction;
@@ -63,7 +64,8 @@ public class Account {
     public Transaction deposit(double quantity) throws Exception {
         validDeposit(quantity);
 
-        Transaction transaction = new Transaction(null, this, quantity);
+        // Transaction transaction = new Transaction(null, this, quantity);
+        Transaction transaction = new Transaction(null, iban, quantity);
         transactions.add(transaction);
 
         updateBalance(quantity);
@@ -74,7 +76,8 @@ public class Account {
     public Transaction withdraw(double quantity) throws Exception {
         validWithdraw(quantity);
 
-        Transaction transaction = new Transaction(this, null, quantity);
+        // Transaction transaction = new Transaction(this, null, quantity);
+        Transaction transaction = new Transaction(iban, null, quantity);
         transactions.add(transaction);
 
         updateBalance(-quantity);

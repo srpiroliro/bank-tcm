@@ -75,6 +75,8 @@ public class AccountController {
         return new TransactionDTO(transaction);
     }
 
+
+    // CHECK: reciever IBAN or id?
     public TransactionDTO wire(String accountId, String receiverAccountId, double quantity) throws Exception {
         Account account = accountRepository.findById(accountId).get();
         Account accountReceiver = accountRepository.findById(receiverAccountId).get();

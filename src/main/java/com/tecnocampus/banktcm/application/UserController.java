@@ -27,9 +27,7 @@ public class UserController {
         return new UserDTO(userRepository.findById(userId).get());
     }
 
-    public void removeUser(String userId) throws Exception {
+    public void deleteUser(String userId) throws Exception {
         userRepository.deleteById(userId);
     }
-
-
 }

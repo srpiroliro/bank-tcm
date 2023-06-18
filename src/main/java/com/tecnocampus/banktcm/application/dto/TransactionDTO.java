@@ -4,16 +4,18 @@ import com.tecnocampus.banktcm.domain.Transaction;
 
 public class TransactionDTO {
     private String id;
-    private String from;
-    private String to;
+    private String from; // CHECK: IBAN or id?
+    private String to; // CHECK: IBAN or id? 
     private double quantity;
     private Long timestamp;
     private String type;
 
     public TransactionDTO(Transaction transaction) {
         id=transaction.getId();
-        from=transaction.getFrom().getIban();
-        to=transaction.getTo().getIban();
+        // from=transaction.getFrom().getIban();
+        // to=transaction.getTo().getIban();
+        from=transaction.getFrom();
+        to=transaction.getTo();
         quantity=transaction.getQuantity();
         timestamp=transaction.getTimestamp();
         type=transaction.getType().name();

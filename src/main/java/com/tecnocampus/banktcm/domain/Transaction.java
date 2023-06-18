@@ -15,12 +15,17 @@ public class Transaction {
     private String id = UUID.randomUUID().toString();
 
     private ETransactionTypes type;
-    private Account from;
-    private Account to;
+
+    // private Account from;
+    // private Account to;
+    private String from;
+    private String to;
+
     private double quantity;
     private Long timestamp = System.currentTimeMillis();
 
-    public Transaction(Account from, Account to, double quantity) throws Exception {
+    // public Transaction(Account from, Account to, double quantity) throws Exception {
+    public Transaction(String from, String to, double quantity) throws Exception {
         this.from=from;
         this.to=to;
         this.quantity=quantity;
@@ -44,12 +49,18 @@ public class Transaction {
     public String getId() {
         return id;
     }
-    public Account getFrom() {
+    public String getFrom() {
         return from;
     }
-    public Account getTo() {
+    public String getTo() {
         return to;
     }
+    // public Account getFrom() {
+    //     return from;
+    // }
+    // public Account getTo() {
+    //     return to;
+    // }
     public double getQuantity() {
         return quantity;
     }
